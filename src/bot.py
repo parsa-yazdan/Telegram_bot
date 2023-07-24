@@ -3,6 +3,8 @@ import os
 from loguru import logger
 from utils.jsonio import write_json
 from utils.keyboard import keyboards
+#import emoji
+#from math import *
 
 class Bot:
 	def __init__(self):
@@ -17,7 +19,8 @@ class Bot:
 
 	def echo_all(self, message):
 		write_json(message.json, 'message.json')
-		self.bot.send_message(message.chat.id, message.text, reply_markup=keyboards.sender)
+		#self.bot.reply_to(message, eval(message.text))
+		self.bot.send_message(message.chat.id, message.text, reply_markup=keyboards.main)
 
 
 if __name__ == '__main__':
