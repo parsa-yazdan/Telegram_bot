@@ -8,7 +8,7 @@ from utils.keyboard import keyboards
 
 class Bot:
 	def __init__(self):
-		self.bot = telebot.TeleBot(os.environ['INCOGNITO_BOT'])
+		self.bot = telebot.TeleBot(os.environ['TELEGRAM_BOT'])
 		self.echo_all = self.bot.message_handler(
 			func = lambda message: True
 		)(self.echo_all)
